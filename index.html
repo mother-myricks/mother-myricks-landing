@@ -180,6 +180,13 @@
     margin-bottom:1.8rem;
   }
 
+  .panel-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.7rem;
+  }
+
   .panel-cue{
     display:inline-flex;
     align-items:center;
@@ -195,11 +202,23 @@
     transition: background 0.35s ease, transform 0.35s ease, gap 0.35s ease;
   }
 
+  .panel-cue--secondary{
+    color:var(--gold-light);
+    background:transparent;
+    box-shadow:inset 0 0 0 1px var(--gold-light);
+  }
+
   .panel:hover .panel-cue,
   .panel:focus-within .panel-cue{
     background:var(--cream);
     gap:0.75rem;
     transform:translateY(-2px);
+  }
+
+  .panel:hover .panel-cue--secondary,
+  .panel:focus-within .panel-cue--secondary{
+    background:var(--gold-light);
+    color:var(--deep);
   }
 
   .panel-cue:focus-visible{
@@ -282,12 +301,15 @@
 
   <div class="panel panel--retail" data-href="https://mothermyricks-store.com">
     <div class="panel-inner">
-      <span class="panel-eyebrow">In Person</span>
+      <span class="panel-eyebrow">For Pick Up</span>
       <h2 class="panel-title">Retail Store</h2>
       <p class="panel-sub">Visit the shop in Manchester, Vermont for buttercrunch, cakes and chocolates made fresh daily.</p>
-      <a class="panel-cue" href="https://mothermyricks-store.com">Enter store
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      <div class="panel-actions">
+        <a class="panel-cue" href="https://mothermyricks-store.com">Menu
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="panel-cue panel-cue--secondary" href="https://www.google.com/maps/dir/?api=1&amp;destination=4367+Main+Street%2C+Manchester+Center%2C+VT+05255">Directions</a>
+      </div>
     </div>
   </div>
 
